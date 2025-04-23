@@ -1,10 +1,11 @@
+import Dictionary.Dictionary;
 import Queue.Queue;
 import Stack.Stack;
 import linkedList.DoublyLinkedList;
 import linkedList.SinglyLinkedList;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IllegalAccessException {
 
         //region QueueExample
         /*try {
@@ -45,6 +46,18 @@ public class Main {
             System.out.println("Done");
         }*/
         //endregion
+
+        Dictionary<String,String> dictionary=new Dictionary<String,String>();
+        dictionary.setEntries("Ali", "Ali@gmail.com");
+        dictionary.setEntries("Ahmed", "Ahmed@gmail.com");
+        dictionary.setEntries("Mohamed", "Ali@gmail.com");
+
+        try {
+            dictionary.print();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
 
 
     }
