@@ -48,13 +48,20 @@ public class Main {
         //endregion
 
         Dictionary<String,String> dictionary=new Dictionary<String,String>();
-        dictionary.setEntries("Ali", "Ali@gmail.com");
-        dictionary.setEntries("Ahmed", "Ahmed@gmail.com");
-        dictionary.setEntries("Mohamed", "Ali@gmail.com");
 
         try {
+           //dictionary.print();
+            if(dictionary.remove("Ali")==false){
+                System.out.println("This User Doesn't Exist In Dictionary");
+            }else {
+                System.out.println("This User Has Been Deleted Successfully");
+            }
+
             //dictionary.print();
-            System.out.println(dictionary.getEntries("Ali"));
+            dictionary.setEntries("Ali", "Ali@gmail.com");
+            dictionary.print();
+            dictionary.setEntries("Ali", "Ali@gmail.com");
+            dictionary.print();
 
         }catch (Exception e){
             System.out.println(e.getMessage());

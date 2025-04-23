@@ -1,9 +1,5 @@
 package Dictionary;
 
-import jdk.jfr.Unsigned;
-
-import java.io.IOException;
-
 public class Dictionary<TKey ,TValue> {
     KeyValuePair[] entries;
     int intialSize;
@@ -28,6 +24,8 @@ public class Dictionary<TKey ,TValue> {
         for (int i = 0; i < entries.length; i++) {
             if (entries[i] != null && entries[i].key.equals(key)) {
                 entries[i].value = value;
+                //if user has already existed print 
+                System.out.println("This User already exist");
                 return;
             }
         }
@@ -42,6 +40,9 @@ public class Dictionary<TKey ,TValue> {
                     throw new IndexOutOfBoundsException("Not Found Dictionary Is Empty!!");
                 } else {
                     for (int i = 0; i < entries.length; i++) {
+                        if(entries[i]==null){
+                            return;
+                        }
                         System.out.println((i + 1) + " -> " + entries[i].key + ":" + entries[i].value);
                     }
                 }
@@ -60,6 +61,21 @@ public class Dictionary<TKey ,TValue> {
         }
         throw new RuntimeException("Key You Entered Not Found In Dictionary");
     }
+    public Boolean remove(TKey key) {
+        for (int i = 0; i < entriesCount; i++) {
+            if (entries[i] != null && entries[i].key.equals(key)) {
+                for (int j = i; j < entriesCount - 1; j++) {
+                    entries[j] = entries[j + 1];
+                }
+                entries[--entriesCount] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
 
 
 
