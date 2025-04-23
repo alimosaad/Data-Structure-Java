@@ -1,5 +1,4 @@
 package Dictionary;
-
 public class Dictionary<TKey ,TValue> {
     KeyValuePair[] entries;
     int intialSize;
@@ -24,7 +23,7 @@ public class Dictionary<TKey ,TValue> {
         for (int i = 0; i < entries.length; i++) {
             if (entries[i] != null && entries[i].key.equals(key)) {
                 entries[i].value = value;
-                //if user has already existed print 
+                //if user has already existed print
                 System.out.println("This User already exist");
                 return;
             }
