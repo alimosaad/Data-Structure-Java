@@ -1,11 +1,15 @@
 package Dictionary;
 
+import jdk.jfr.Unsigned;
+
+import java.io.IOException;
+
 public class Dictionary<TKey ,TValue> {
     KeyValuePair[] entries;
     int intialSize;
     int entriesCount=0;
     public Dictionary(){
-        this.entries=new KeyValuePair[this.intialSize];
+        this.entries= new KeyValuePair[this.intialSize];
     }
 
     public void reSize(){
@@ -31,7 +35,7 @@ public class Dictionary<TKey ,TValue> {
             entries[entriesCount++] = new KeyValuePair<>(key, value);
 
     }
-        public void print() {
+    public void print() {
             System.out.println("size: " + getSize());
 
                 if (IsEmpty()) {
@@ -47,5 +51,16 @@ public class Dictionary<TKey ,TValue> {
     public boolean IsEmpty() {
         return entriesCount==0;
     }
+    @SuppressWarnings("unchecked")
+    public TValue getEntries(TKey key) {
+        for (int i = 0; i < entries.length; i++) {
+            if (entries[i] != null && entries[i].key.equals(key)) {
+                return (TValue) entries[i].value;
+            }
+        }
+        throw new RuntimeException("Key You Entered Not Found In Dictionary");
+    }
+
+
 
 }

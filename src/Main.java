@@ -53,7 +53,9 @@ public class Main {
         dictionary.setEntries("Mohamed", "Ali@gmail.com");
 
         try {
-            dictionary.print();
+            //dictionary.print();
+            System.out.println(dictionary.getEntries("Ali"));
+
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
