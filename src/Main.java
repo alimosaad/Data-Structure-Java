@@ -1,8 +1,14 @@
 import Dictionary.Dictionary;
 import Queue.Queue;
 import Stack.Stack;
+import arrays.ResizeArray;
+import dynamicArray.DynamicArray;
 import linkedList.DoublyLinkedList;
 import linkedList.SinglyLinkedList;
+import linkedlist2.linkedlist;
+
+import java.util.Arrays;
+import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) throws IllegalAccessException {
@@ -47,7 +53,8 @@ public class Main {
         }*/
         //endregion
 
-        Dictionary<String,String> dictionary=new Dictionary<String,String>();
+        //region DictionaryExamole
+        /*Dictionary<String,String> dictionary=new Dictionary<String,String>();
 
         try {
            //dictionary.print();
@@ -65,7 +72,37 @@ public class Main {
 
         }catch (Exception e){
             System.out.println(e.getMessage());
-        }
+        }*/
+        //endregion
+
+        //region arrayExample
+        /*Integer[] arr=new Integer[]{1,2,5,6,9};
+        ResizeArray resizeArray=new ResizeArray();
+
+
+       Integer[] copied= resizeArray.resiz(arr,0,5);
+
+       boolean re=Arrays.equals(arr,copied);
+
+        System.out.println("Extended Array: " + Arrays.toString(copied));
+        System.out.println("Extended Array: " + re);*/
+        //endregion
+
+        //DynamicArray<Integer> d=new DynamicArray<Integer>();
+
+        linkedlist d=new linkedlist();
+
+        d.addLast(10);
+        d.addLast(18);
+        d.addLast(19);
+        d.addFirst(5);
+        d.printList();
+        System.out.println("--------------------------------------------");
+        d.insertAfter(19,25);
+        d.printList();
+        System.out.println("size: "+d.size());
+
+
 
 
 
