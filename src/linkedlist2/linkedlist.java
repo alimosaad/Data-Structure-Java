@@ -29,14 +29,12 @@ public class linkedlist {
         if(this.head==null){
             this.head =newNode;
             this.tail=newNode;
-            numOfItem++;
-
         }
         else{
             newNode.next=head;
             head=newNode;
-            numOfItem++;
         }
+        numOfItem++;
 
 
     }
