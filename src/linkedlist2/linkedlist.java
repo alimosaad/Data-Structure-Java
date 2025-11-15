@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class linkedlist {
-    Node head=null ;
+    public Node head=null ;
     Node tail=null;
     private int numOfItem;
     public linkedlist(){
@@ -38,7 +38,11 @@ public class linkedlist {
 
 
     }
-
+    public void deleteHead(){
+        if (this.head==null) return;
+        head=head.next; // we can use temp Node and make it equal null after a forward pointer to the next node.
+        numOfItem--;
+    }
     public Node findNode(int current){
         Node temp=head;
         while(temp!=null&&current!=temp.getData()){

@@ -9,6 +9,7 @@ import linkedlist2.linkedlist;
 
 import java.util.Arrays;
 import java.util.ListIterator;
+import Stack.StackUsingLinkedList;
 
 public class Main {
     public static void main(String[] args) throws IllegalAccessException {
@@ -90,7 +91,8 @@ public class Main {
 
         //DynamicArray<Integer> d=new DynamicArray<Integer>();
 
-        linkedlist d=new linkedlist();
+        //region example of linked list
+        /*linkedlist d=new linkedlist();
 
         d.addLast(10);
         d.addLast(18);
@@ -100,7 +102,31 @@ public class Main {
         System.out.println("--------------------------------------------");
         d.insertAfter(19,25);
         d.printList();
-        System.out.println("size: "+d.size());
+        System.out.println("-----------------------------------------------");
+        d.deleteHead();
+        d.printList();
+        System.out.println("size: "+d.size());*/
+        //endregion
+
+        StackUsingLinkedList list =new StackUsingLinkedList();
+        list.push(4);
+        list.push(5);
+        list.push(2);
+        list.push(6);
+        list.print();
+        System.out.println(list.isEmpty());
+        list.top();
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("popped value Is: "+list.pop());
+        System.out.println("----------------------------");
+
+        list.print();
+        list.top();
+
+
+
+
 
 
 
